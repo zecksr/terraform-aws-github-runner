@@ -27,7 +27,6 @@ describe('Publish message to SQS', () => {
     });
   });
 
-
   it('should log error if queue URL not found', async () => {
     // setup
     const logErrorSpy = jest.spyOn(logger, 'error');
