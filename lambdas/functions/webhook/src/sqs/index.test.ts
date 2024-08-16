@@ -1,6 +1,6 @@
 import { SendMessageCommandInput } from '@aws-sdk/client-sqs';
 
-import { ActionRequestMessage, GithubWorkflowEvent, sendActionRequest, sendWebhookEventToWorkflowJobQueue } from '.';
+import { GithubWorkflowEvent, sendActionRequest, sendWebhookEventToWorkflowJobQueue } from '.';
 import workflowjob_event from '../../test/resources/github_workflowjob_event.json';
 import { Config } from '../ConfigResolver';
 import { getParameter } from '@terraform-aws-github-runner/aws-ssm-util';
