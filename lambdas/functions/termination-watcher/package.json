@@ -17,7 +17,7 @@
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/aws-lambda": "^8.10.143",
     "@types/jest": "^29.5.12",
-    "@types/node": "^22.0.2",
+    "@types/node": "^22.4.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "@vercel/ncc": "^0.38.1",
@@ -30,12 +30,12 @@
     "jest-mock-extended": "^3.0.7",
     "nock": "^13.5.4",
     "prettier": "3.3.3",
-    "ts-jest": "^29.2.4",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0"
   },
   "dependencies": {
-    "@aws-sdk/client-ec2": "^3.629.0",
+    "@aws-sdk/client-ec2": "^3.637.0",
     "@aws-sdk/types": "^3.609.0",
     "@middy/core": "^4.7.0",
     "@terraform-aws-github-runner/aws-powertools-util": "*",

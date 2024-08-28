@@ -4,7 +4,8 @@ locals {
 
   environment_variables = {
     ENABLE_ORGANIZATION_RUNNERS          = var.config.enable_organization_runners
-    ENABLE_METRICS                       = var.config.metrics_config.enable
+    ENABLE_METRIC_JOB_RETRY              = var.config.metrics.enable && var.config.metrics.metric.enable_job_retry
+    ENABLE_METRIC_GITHUB_APP_RATE_LIMIT  = var.config.metrics.enable && var.config.metrics.metric.enable_github_app_rate_limit
     GHES_URL                             = var.config.ghes_url
     JOB_QUEUE_SCALE_UP_URL               = var.config.sqs_build_queue.url
     PARAMETER_GITHUB_APP_ID_NAME         = var.config.github_app_parameters.id.name
@@ -16,7 +17,7 @@ locals {
     handler               = "index.jobRetryCheck",
     zip                   = local.lambda_zip,
     environment_variables = local.environment_variables
-    metrics_namespace     = var.config.metrics_config.namespace
+    metrics_namespace     = var.config.metrics.namespace
   })
 }
 
@@ -26,7 +27,7 @@ resource "aws_sqs_queue_policy" "job_retry_check_queue_policy" {
 }
 
 resource "aws_sqs_queue" "job_retry_check_queue" {
-  name                       = "${var.config.prefix}-job-retrys"
+  name                       = "${var.config.prefix}-job-retry"
   visibility_timeout_seconds = local.config.timeout
 
   sqs_managed_sse_enabled           = var.config.queue_encryption.sqs_managed_sse_enabled

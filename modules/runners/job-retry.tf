@@ -15,12 +15,13 @@ locals {
     log_level                   = var.log_level
     logging_kms_key_id          = var.logging_kms_key_id
     logging_retention_in_days   = var.logging_retention_in_days
-    metrics_config              = var.metrics_config
+    metrics                     = var.metrics
     role_path                   = var.role_path
     role_permissions_boundary   = var.role_permissions_boundary
     s3_bucket                   = var.lambda_s3_bucket
     s3_key                      = var.runners_lambda_s3_key
     s3_object_version           = var.runners_lambda_s3_object_version
+    zip                         = var.lambda_zip
     tracing_config              = var.tracing_config
     github_app_parameters       = var.github_app_parameters
     enable_organization_runners = var.enable_organization_runners
